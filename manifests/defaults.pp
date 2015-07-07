@@ -31,6 +31,7 @@ class yum::defaults ( ) inherits yum::params {
   if 'elastix' in $yum::extrarepo { include yum::repo::elastix }
   if 'mysql_community' in $yum::extrarepo { include yum::repo::mysql_community }
   if 'dell_omsa' in $yum::extrarepo { include yum::repo::dell_omsa }
+  if 'cdh5' in $yum::extrarepo {include yum::repo::cdh5}
 
   if $yum::bool_defaultrepo {
     case $::operatingsystem {
